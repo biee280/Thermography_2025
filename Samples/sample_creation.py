@@ -8,9 +8,9 @@ box_width = 100.0
 box_height = 5
 
 # Define the dimensions of the circular void
-void_radius = 10.0
-void_height = 1.5 # The actual height/depth of the circular void
-void_z_offset = 1.5 # Distance from the bottom of the box to the bottom of the void
+void_radius = 15.0
+void_height = 1.7 # The actual height/depth of the circular void
+void_z_offset = 1.2 # Distance from the bottom of the box to the bottom of the void
 
 # Create the main box object
 # We start on the XY plane. The .box() method creates a box centered at the origin.
@@ -36,7 +36,7 @@ void_cylinder = void_cylinder.translate((0, 0, void_center_z))
 # The .cut() method subtracts the second object from the first
 result = box.cut(void_cylinder)
 
-result.export(f"sample_1_r_{void_radius}_h_{void_height}_d_{void_z_offset}.step", "STEP")
+result.export(f"sample_2_r_{void_radius}_h_{void_height}_d_{void_z_offset}.step", "STEP")
 print("exported")
 
 cylinder = cq.Workplane("XY").cylinder(void_height, void_radius)
@@ -46,7 +46,7 @@ cylinder = cylinder.translate((0, 0, void_center_z))
 # The .cut() method subtracts the second object from the first
 result_2 = cylinder
 
-result_2.export(f"sample_1_cyliner.step", "STEP")
+result_2.export(f"sample_2_cyliner.step", "STEP")
 print("exported")
 
 
